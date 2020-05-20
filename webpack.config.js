@@ -11,11 +11,33 @@ const htmlWebpackPlugin = require("html-webpack-plugin")
     },
     "plugins":[
         new htmlWebpackPlugin({
-            "filename":"index.html",
-            "template":"index.html",
+            "filename":"a.html",
+            "template":"src/index.html",
             "inject":"head",
-            "title":"dhy",
-            "date":new Date()
+            "title":"dhy-01",
+            "date":new Date(),
+            // "chunks":["a"],
+            "excludeChunks":["b","c"]
+            // "minify":{
+            //     "removeComments":true, //去注释
+            //     "collapseWhitespace":true// 去空格
+            // }
+        }),
+        new htmlWebpackPlugin({
+            "filename":"b.html",
+            "template":"src/index.html",
+            "inject":"head",
+            "title":"dhy-02",
+            "date":new Date(),
+            "chunks":["b"]
+        }),
+        new htmlWebpackPlugin({
+            "filename":"c.html",
+            "template":"src/index.html",
+            "inject":"head",
+            "title":"dhy-03",
+            "date":new Date(),
+            "chunks":["c"]
         })
     ]
 }
