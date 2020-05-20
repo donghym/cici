@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development --module-bind 'css=style-loader!css-loader' --progress --display-modules --display-reasons --colors"
+    "dev": "npm run clean & webpack --mode development --module-bind 'css=style-loader!css-loader' --progress --display-modules --display-reasons --colors",
+    "build": "npm run clean & webpack --mode production --module-bind 'css=style-loader!css-loader' --progress --display-modules --display-reasons --colors",
+    "clean": "rimraf ./dist/*"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,12 @@
   "homepage": "https://github.com/justsuccess/cici#readme",
   "devDependencies": {
     "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
   }
 }
