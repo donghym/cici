@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development src/js/index2.js --module-bind 'css=style-loader!css-loader' --progress --dispaly-modules --display-reasons"
+    "dev": "webpack --mode development --module-bind 'css=style-loader!css-loader' --progress --display-modules --display-reasons --colors"
   },
   "repository": {
     "type": "git",
