@@ -26,9 +26,22 @@ const path = require("path") // 优化
 					},
 					{
 						"loader":"css-loader",
+						"options":{ // 引入过来的文件 需要通过postcss-loader
+							"importLoaders":1
+						}
 					},
 					{
-						"loader":"less-loader",
+						"loader":"postcss-loader",
+						"options":{
+							"plugins":(loader)=>[
+								require("autoprefixer")({
+									"browsers":["last 5 versions"]
+								})
+							]
+						}
+					},
+					{
+						"loader":"less-loader"
 					}
 				]
 			},
