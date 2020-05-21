@@ -1,4 +1,5 @@
 // import { tpl } from "./layer.html";
+import "./index.less"
 function layer(){
     return {
         name:"layer",

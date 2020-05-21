@@ -1,12 +1,11 @@
 {
   "name": "cici",
   "version": "1.0.0",
-  "description": "项目表单具有通用的属性，一般就是字段的写入，读取\r 或者change事件影响其他字段值的变化\r // 具体表现\r base 字段的属性包括 收集、显示/隐藏、disabled、readonly、isNull(非空)、后缀、前缀、底部提示等信息 例如input、inputarea\r input、inputarea :length 属性\r 数字输入框 包含 小数位数、格式、min、max、四舍五入方式等\r select、refer、upload、checkbox、radio",
+  "description": "表单是对象的集合",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run clean & webpack --mode development --module-bind 'css=style-loader!css-loader' --progress --display-modules --display-reasons --colors",
-    "build": "npm run clean & webpack --mode production --module-bind 'css=style-loader!css-loader' --progress --display-modules --display-reasons --colors",
+    "dev": "npm run clean & webpack-dev-server --mode development --progress --display-modules --display-reasons --colors",
     "clean": "rimraf ./dist/*"
   },
   "repository": {
@@ -24,12 +23,15 @@
     "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "less-loader": "^6.1.0",
     "rimraf": "^3.0.2",
     "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {}
 }

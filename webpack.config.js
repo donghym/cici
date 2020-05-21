@@ -1,7 +1,7 @@
 const htmlWebpackPlugin = require("html-webpack-plugin")
 const path = require("path") // 优化
  let config = {
-	"entry":"./src/app.jsx",
+	"entry":"./src/app.js",
 	"output":{
 		"path":path.resolve(__dirname+"/dist"),
 		"filename":"js/[name].[chunkhash].js"
@@ -15,12 +15,36 @@ const path = require("path") // 优化
 				"loader":"babel-loader"
 			},
 			{
-				"test":/\.css$/,
-				"loader":"style-loader!css-loader"
+				"test":/\.(css|less)$/,
+				"include":path.resolve(__dirname+"/src"),// 优化
+				"use":[
+					{
+						"loader":"style-loader",
+						"options":{
+							"injectType":"singletonStyleTag"
+						}
+					},
+					{
+						"loader":"css-loader",
+					},
+					{
+						"loader":"less-loader",
+					}
+				]
 			},
 			{
-				"test":/\.less$/,
-				"loader":"style!css!less-loader"
+				"test":/\.(jpg|png|gif)$/,
+				"use":[
+					{
+						"loader":"file-loader"
+					},
+					{
+						"loader":"url-loader",
+						"options":{
+							"limit":1000
+						}
+					}
+				]
 			}
 		]
 	},
