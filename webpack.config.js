@@ -25,8 +25,8 @@ const path = require("path") // 优化
 						}
 					},
 					{
-						"loader":"css-loader",
-						"options":{ // 引入过来的文件 需要通过postcss-loader
+						"loader":"css-loader", 
+						"options":{ // 引入过来的文件 需要通过postcss-loader 混用css 引用的时候
 							"importLoaders":1
 						}
 					},
@@ -35,7 +35,7 @@ const path = require("path") // 优化
 						"options":{
 							"plugins":(loader)=>[
 								require("autoprefixer")({
-									"browsers":["last 5 versions"]
+									"overrideBrowserslist":["last 5 versions"]
 								})
 							]
 						}
@@ -47,6 +47,7 @@ const path = require("path") // 优化
 			},
 			{
 				"test":/\.(jpg|png|gif)$/,
+				"include":path.resolve(__dirname+"/src"),// 优化
 				"use":[
 					{
 						"loader":"file-loader"
@@ -58,16 +59,27 @@ const path = require("path") // 优化
 						}
 					}
 				]
+			},
+			{
+				"test":/\.html$/,
+				"include":path.resolve(__dirname+"/src/components"),// 优化
+				"loader":"html-loader"
+			},
+			{
+				"test":/\.(ejs|tpl)$/,
+				"include":path.resolve(__dirname+"/src/components"),// 优化
+				"loader":"ejs-loader"
 			}
 		]
 	},
 	"plugins":[
 		new htmlWebpackPlugin({
 			"filename":"index.html",
-			"template":"src/index.html",
+			"template":"./src/index.html",
 			"inject":"head",
 			"title":"dhy-01",
-			"date":new Date()
+			"date":new Date(),
+			"showErrors": true
 		})
 	]
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run clean & webpack --mode development --progress --display-modules --display-reasons --colors",
-    "start": "npm run clean & webpack-dev-server --mode development --progress --display-modules --display-reasons --colors",
+    "start": "npm run clean & webpack-dev-server --inline --mode development --progress --display-modules --display-reasons --colors",
     "clean": "rimraf ./dist/*"
   },
   "repository": {
@@ -25,7 +25,9 @@
     "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
+    "ejs-loader": "^0.3.6",
     "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "less-loader": "^6.1.0",
     "postcss-loader": "^3.0.0",
