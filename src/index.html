@@ -4,18 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=htmlWebpackPlugin.options.title %></title>
-    <script type="text/javascript">
-        <%=compilation.assets[htmlWebpackPlugin.files.js[0].substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
-    </script>
 </head>
 <body>
-
-    这是一个新建的项目
-    <%for (var key in htmlWebpackPlugin.files){ %>
-        <%= key %>:<%= JSON.stringify(htmlWebpackPlugin.files[key]) %>
-    <%}%>
-    <%for (var key in htmlWebpackPlugin.options){ %>
-        <%= key %>:<%= JSON.stringify(htmlWebpackPlugin.files[key]) %>
-    <%}%>
+    <%= htmlWebpackPlugin.options.date %>
 </body>
 </html>
