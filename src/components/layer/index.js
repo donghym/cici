@@ -1,9 +1,13 @@
-import tpl from "./index.tpl";
+import tpl from "./index.tpl"
 import "./index.less"
-function layer(){
-    return {
-        name:"layer",
-        tpl:tpl
+import {logBeforeFn,readonly} from "../decorators/common"
+
+@logBeforeFn
+class layer {
+    @readonly changename = "readonly"
+    constructor() {
+        this.name="layer",
+        this.tpl=tpl
     }
 }
 export default layer
