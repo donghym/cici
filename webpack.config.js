@@ -74,7 +74,7 @@ const path = require("path") // 优化
 		new htmlWebpackPlugin({
 			"filename":"index.html",
 			"template":"./src/index.html",
-			"inject":"head",
+			// "inject":"head",
 			"title":"dhy-01",
 			"date":new Date(),
 			"showErrors": true

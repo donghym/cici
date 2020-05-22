@@ -1,6 +1,9 @@
 import "./css/common.css"
-import layer from "./components/layer";
+import Layer from "./components/layer";
 const App = function(){
-    console.log(layer)
+    var layer = new Layer();
+    var app = document.getElementById("app");
+    app.innerHTML = layer.tpl({name:45454})
+    
 }
 new App()

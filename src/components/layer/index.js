@@ -1,9 +1,9 @@
-// import { tpl } from "./layer.html";
+import tpl from "./index.tpl";
 import "./index.less"
 function layer(){
     return {
         name:"layer",
-        // tpl:tpl
+        tpl:tpl
     }
 }
 export default layer
