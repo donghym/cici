@@ -16,7 +16,7 @@ const path = require("path") // 优化
 			},
 			{
 				"test":/\.(css|less)$/,
-				"include":path.resolve(__dirname+"/src"),// 优化
+				"include":[path.resolve(__dirname+"/src"),path.resolve(__dirname+"/node_modules/_antd@4.4.2@antd/dist")],// 优化
 				"use":[
 					{
 						"loader":"style-loader",

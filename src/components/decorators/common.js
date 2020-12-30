@@ -1,7 +1,7 @@
 const logBeforeFn = (target)=>{
     console.log(target.name+" "+"事件触发前")
 }
-function readonly(target, name, descriptor) {
+const readonly = (target, name, descriptor) =>{
     console.log(target, name, descriptor)
   descriptor.writable = false;
   return descriptor;
@@ -35,10 +35,10 @@ const mixin = (...mixins) => (targetClass) => {
   return Mixin;
 }
 
-export default mixin
-
 
 module.exports={
     logBeforeFn,
-    readonly
+    readonly,
+    mixin
+    
 }
